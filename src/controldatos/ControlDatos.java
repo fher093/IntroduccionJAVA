@@ -5,17 +5,14 @@ import java.util.Scanner;
 public class ControlDatos {
 
     public static void main(String[] args) {
-             //miMetodo();//llamada al metodo
-             //lecturaEnteros(); 
-             metodoParametrizado(4);
+             //lecturaEnteros();
+       
     } 
     
-    public static void miMetodo(){
-        System.out.println("Mi primer metodo");  
-    } 
-    public static void lecturaEnteros(){
+   
+    public static int lecturaEnteros(){
     
-           boolean correcto = true;
+        boolean correcto = true;
         int valor = 0;
         do {
             Scanner teclado = new Scanner(System.in);
@@ -27,12 +24,9 @@ public class ControlDatos {
                 System.out.println("Ingrese solo enteros");
             }
         } while (correcto == true);
-        System.out.println("El numero ingresado es: " + valor);
+        return valor;
     } 
-        
-    public static void metodoParametrizado(int valor){// dentro del parentesis inicializamos variables
-        System.out.println("El valor recibido es : "+valor);
-    }
+    
 }  
 
 
