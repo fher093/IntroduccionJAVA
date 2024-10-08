@@ -64,7 +64,7 @@ public class ControlDatos {
         return valor;
     }   
          
-        public static boolean lecturaBooelan(){
+        public static boolean lecturaBooelan(){//ectura boolean
     
         boolean correcto = true;
         boolean valor = false;
