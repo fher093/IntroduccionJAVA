@@ -29,7 +29,7 @@ public class ControlDatos {
         return valor;
     }  
     
-        public static double lecturaDouble(){
+        public static double lecturaDouble(){ //lectura double
   
         boolean correcto = true;
         double valor = 0;
