@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class ControlDatos {
 
     public static void main(String[] args) {
-             //lecturaEnteros(); 
-            // lecturaDouble();
-            //ecturaFloat(); 
-            //lecturaBooelan();
-            //lecturaChar();
-    } 
+           int valor = lecturaEnteros("Ingrese una edad: ");
+           System.out.println("La edad ingresada es "+valor+" anios");
+    }  
+    
+    //lectura enteros 
         public static int lecturaEnteros(){
     
             boolean correcto = true;
@@ -19,7 +18,26 @@ public class ControlDatos {
                 do {
                     Scanner teclado = new Scanner(System.in);
                     try {
-                    System.out.println("Ingrese un entero");
+                    System.out.println("Ingrese un entero"); // ejemplo de codigo quemado 
+                    valor = teclado.nextInt();
+                    correcto=false; 
+                    } catch (Exception e) {
+                      System.out.println("Error:  Ingrese solo enteros");
+                  } 
+                } while (correcto == true);
+        return valor;
+    }   
+        
+        //lectura enteros con modificacion de mensaje para evitar codigo quemado
+        public static int lecturaEnteros(String texto){
+    
+            boolean correcto = true;
+            int valor = 0;
+            
+                do {
+                    Scanner teclado = new Scanner(System.in);
+                    try {
+                    System.out.println(texto);
                     valor = teclado.nextInt();
                     correcto=false; 
                     } catch (Exception e) {
@@ -28,8 +46,10 @@ public class ControlDatos {
                 } while (correcto == true);
         return valor;
     }  
-    
-        public static double lecturaDouble(){ //lectura double
+     
+        //lectura double
+        
+        public static double lecturaDouble(String texto){ 
   
         boolean correcto = true;
         double valor = 0;
@@ -37,7 +57,7 @@ public class ControlDatos {
         do {
                 Scanner teclado = new Scanner(System.in);
                 try {
-                    System.out.println("Ingrese un Double");
+                    System.out.print(texto);
                     valor = teclado.nextDouble();
                     correcto=false;
                 } catch (Exception e) {
@@ -45,16 +65,18 @@ public class ControlDatos {
                 }
         } while (correcto == true);
         return valor;
-    }   
+    }    
         
-         public static float lecturaFloat(){
+        //lectura de un float
+        
+         public static float lecturaFloat(String texto){
     
         boolean correcto = true;
         float valor = 0;
         do {
             Scanner teclado = new Scanner(System.in);
             try {
-                System.out.println("Ingrese un Decimal");
+                System.out.println(texto);
                 valor = teclado.nextFloat();
                 correcto=false;
             } catch (Exception e) {
@@ -63,15 +85,15 @@ public class ControlDatos {
         } while (correcto == true);
         return valor;
     }   
-         
-        public static boolean lecturaBooelan(){//ectura boolean
+         //lectura de un Boolean
+        public static boolean lecturaBooelan(String texto){
     
         boolean correcto = true;
         boolean valor = false;
         do {
             Scanner teclado = new Scanner(System.in);
             try {
-                System.out.println("Ingrese un Boolean");
+                System.out.println(texto);
                 valor = teclado.nextBoolean();
                 correcto=false;
             } catch (Exception e) {
@@ -79,16 +101,16 @@ public class ControlDatos {
             }
         } while (correcto == true);
         return valor;
-    }   
+    }    
         
-
-
-        public static char lecturaChar() {
+        //lectura de un Char
+        
+        public static char lecturaChar(String texto) {
         Scanner teclado = new Scanner(System.in);
         char valor;
 
         while (true) {
-            System.out.println("Ingrese un caracter:");
+            System.out.println(texto);
             String entrada = teclado.nextLine(); 
 
 
