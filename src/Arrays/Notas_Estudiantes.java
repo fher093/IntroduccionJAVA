@@ -31,6 +31,7 @@ public class Notas_Estudiantes {
         System.out.println("___Nombre____|___Nota____");
         for (int i = 0; i < estudiantes.length; i++) {
             System.out.println(estudiantes[i][0]+"           "+estudiantes[i][1]);
+            System.out.println("hola");
             }
         
     
