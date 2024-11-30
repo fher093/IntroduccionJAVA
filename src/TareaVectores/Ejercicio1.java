@@ -21,7 +21,7 @@ public class Ejercicio1 {
             vectorRandom[i]= (int) random.nextInt(1,9); 
             System.out.println("["+vectorRandom[i]+"]");
         } 
-        System.out.println("Ingrese un para ver cuantas veces se repite: "); 
+        System.out.println("Ingrese un  numero para ver cuantas veces se repite: "); 
         int entrada = teclado.nextInt(); 
         
          while (entrada < 1 || entrada > 10) {
