@@ -21,9 +21,7 @@ public class Ejercicio7_ArrayList {
         System.out.println("5.Imprimir");
         System.out.println("6.Salir");
     }  
-    
-  
-    
+      
     public static void funcionalidades(){
         ArrayList<String> menu = new ArrayList<>(); 
         Scanner teclado = new Scanner(System.in);
@@ -43,24 +41,35 @@ public class Ejercicio7_ArrayList {
                     
                     case 2: 
                         System.out.println("Ingrese el indice que quiere cambiar");
-                        int indice1 = teclado.nextInt(); 
-                        System.out.println("Ingrese el indice por el cual quiere cambiar");
-                        int indice2 = teclado.nextInt(); 
-                        
-                        String posicion1 = menu.get(indice1-1);
-                        String posicion2 = menu.get(indice2-1); 
-                        
-                        posicion1=posicion2;
-                        posicion2=posicion1;
-                        
-                        /*menu.add(posicion2);
-                        menu.add(posicion1);*/
-                    break;
+                            int indice1 = teclado.nextInt(); 
+                            System.out.println("Ingrese el indice por el cual quiere cambiar");
+                            int indice2 = teclado.nextInt(); 
+
+                            
+                            if (indice1 > 0 && indice1 <= menu.size() && indice2 > 0 && indice2 <= menu.size()) {
+                               
+                                String auxiliar = menu.get(indice1 - 1);
+                                menu.set(indice1 - 1, menu.get(indice2 - 1));
+                                menu.set(indice2 - 1, auxiliar);
+
+                            } else {
+                                System.out.println("Índices fuera de rango. Intente de nuevo.");
+                            }
+                            System.out.println("Lista Modificada: ");
+                            imprimirLista(menu);
+                            break;
+                            
                     
                     case 3: 
-                        System.out.println("Que numero de palabra desea eliminar"); 
-                        int indice = teclado.nextInt(); 
+                        System.out.println("Que posicion desea eliminar"); 
+                        int indice = teclado.nextInt();  
+                        if(indice >0 && indice <=menu.size() ){
+                            
                         menu.remove(indice-1);
+                        System.out.println("Nombre eliminado");
+                        }else{
+                            System.out.println("Indice incorrecto");
+                        }
                     break; 
                      
                     case 4: 
@@ -74,7 +83,7 @@ public class Ejercicio7_ArrayList {
                                 existe = true;
                                 break; 
                             }
-                        }
+                        } 
 
                         if (!existe) {
                             System.out.println("La palabra no existe");
@@ -99,13 +108,12 @@ public class Ejercicio7_ArrayList {
     } 
     
       public static void imprimirLista(ArrayList<String> Lista) {
-       /* if (Lista.isEmpty()) {
-            System.out.println("La lista está vacía.");
-        } else {*/
+                System.out.println("=======================");
             System.out.println("Contenido de la lista:");
             for (int i = 0; i < Lista.size(); i++) {
                 System.out.println((i+1)+".-"+Lista.get(i));
           }
+                System.out.println("=======================");
         }
       
 }
